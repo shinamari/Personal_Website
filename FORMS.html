@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration System</title>
+
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: "Monospace", Courier;
+            margin: 0;
+            padding: 0;
+            background-color: #eef5ff;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #330c4f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 50px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        /* Main Container */
+        .container {
+           display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+
+        /* Section Styling */
+        .section {
+            background: #ffffff ;
+            border: 1px solid #ECFBFC;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            height: 655px;
+            width: 500px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #330c4f;
+            border-bottom: 2px solid #914bc3;
+            padding-bottom: 10px;
+        }
+
+        .info_sec{
+            background: #ffffff ;
+            border: 1px solid #ECFBFC;
+            border-radius: 5px;
+            margin: 10px;
+           height: 655px;
+            padding: 15px;
+            width: 900px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .info_sec h2 {
+             color: #330c4f;
+            border-bottom: 2px solid #914bc3;
+            padding-bottom: 10px;
+        }
+
+        /* Form */
+        form {
+            display: grid;
+            grid-template-columns: 1fr ;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        label {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 6px;
+            color: #330c4f;
+        }
+
+        input,
+        select {
+            padding: 11px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #330c4f;
+        }
+
+        .button-container {
+            grid-column: span 2;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #330c4f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #551a80;
+        }
+        .clear{
+             background-color: #686a6d;
+            color: white;
+        }
+        .clear:hover{
+            background-color: #bdbdbd;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        caption {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #330c4f;
+            padding: 10px;
+            
+        }
+
+
+        th {
+            background-color: #330c4f;
+            color: white;
+            padding: 12px;
+            border: 1px solid #3f0c64;
+            height: 50px;
+            font-size: 15px;
+        }
+
+        td {
+            padding: 11px;
+            text-align: center;
+            border: 1px solid #ccc;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f3eafa;
+        }
+
+        tbody tr:hover {
+            background-color: #e5d5f2;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #330c4f;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        .registration-info {
+            background-color: #ffffff;
+            border-left: 5px solid #330c4f;
+            border-radius: 5px;
+            margin: 20px auto;
+            padding: 18px 20px;
+            width: 85%;
+            text-align: left;
+        }
+
+        .registration-info caption {
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            font-size: 25px;
+            color: #333;
+            padding: 0 0 8px 0;
+        }
+
+        .registration-info p {
+            margin: 0;
+            text-align: left;
+            color: #555;
+            font-size: 17px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 7px;
+            }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>STUDENT REGISTRATION SYSTEM</h1>
+        <p>Please complete the registration form below.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Registration Form -->
+        <section class="section">
+            <h2>Student Registration Form</h2>
+
+            <form>
+
+
+                 <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname"
+                           placeholder="Enter Full Name" required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email"
+                           placeholder="Enter Email Address" required>
+                </div>
+
+                <br>
+                <div class="form-group">
+                    <label for="studentID">Student ID</label>
+                    <input type="text" id="studentID"
+                           placeholder="Enter Student ID" required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" required>
+                        <option value="">Select Course</option>
+                        <option value="BSIT">BS Information Technology</option>
+                        <option value="BSCS">BS Computer Science</option>
+                        <option value="BEED">Bachelor of Elementary Education</option>
+                        <option value="BSA">BS Accountancy</option>
+                        <option value="BSN">BS Nursing</option>
+                        <option value="BSTM">BS Tourism Management</option>
+                    </select>
+                </div>
+                <br>
+
+                <div class="form-group">
+                   
+                <label for="gender">Gender</label>
+                <label>  
+                <input type="radio" name="male" 
+                value="Gender:"> Male
+                
+                <input type="radio" name="female" 
+                value="Gender:"> Female
+                </label>
+
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea rows="5" cols="33" placeholder="Enter your message..."></textarea>
+                    
+                </div>
+
+                <div class="button-container">
+                    <button type="submit">Register </button>
+                    <button  class= "clear" type="reset">Clear </button>
+                </div>
+
+            </form>
+        </section>
+
+
+        <!-- Student Information Table -->
+        <section class="info_sec">
+
+            <h2>Student Information</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Full Name</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>2026-001</td>
+                        <td>Sheena Propogo</td>
+                        <td>BSCS</td>
+                        <td>2nd Year</td>
+                        <td>sheena@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-002</td>
+                        <td>Naomee Parsaligan</td>
+                        <td>BEED</td>
+                        <td>2nd Year</td>
+                        <td>neoms@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-003</td>
+                        <td>Angel Grimaldo</td>
+                        <td>Nursing</td>
+                        <td>2nd Year</td>
+                        <td>angel@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-004</td>
+                        <td>Krystal Batiles</td>
+                        <td>BSCS</td>
+                        <td>2nd Year</td>
+                        <td>krystal@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-005</td>
+                        <td>Mervin Alcasabas</td>
+                        <td>BSIT</td>
+                        <td>2rd Year</td>
+                        <td>mervin@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-006</td>
+                        <td>Antonia Degamo</td>
+                        <td>Tourism</td>
+                        <td>2nd Year</td>
+                        <td>tonia@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-007</td>
+                        <td>Bernard Dela Rosa</td>
+                        <td>BSCS</td>
+                        <td>2nd Year</td>
+                        <td>bernard@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-008</td>
+                        <td>Rhian Bumanlag</td>
+                        <td>Accountancy</td>
+                         <td>2nd Year</td>
+                        <td>rhian@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-009</td>
+                        <td>Althea Agnes</td>
+                        <td>BSCS</td>
+                        <td>2nd Year</td>
+                        <td>thea@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-010</td>
+                        <td>Jillian Trilles</td>
+                        <td>BSIT</td>
+                        <td>2nd Year</td>
+                        <td>jill@email.com</td>
+                        <td>Registered</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+                <div class="registration-info">
+                <table class="reg-info">
+                    <caption>Registration Information</caption>
+                </table>
+
+                <p>
+                    Please complete all required fields before submitting the registration form.
+                    Make sure that the information provided is correct.
+                </p>
+            </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Sheena Marie N. Propogo | 2-CS4</p>
+    </footer>
+
+</body>
+</html>===
