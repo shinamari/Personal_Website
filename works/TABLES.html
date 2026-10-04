@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>K-Pop Groups Profiles</title>
+
+    <style>
+        /* General Page Styling */
+        body {
+           font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef5ff;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #8f62ae;
+            color: white;
+            text-align: center;
+            padding: 4px 0 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 35px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+
+        /* Main Container */
+        .container {
+           display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+
+        /* Info Styling */
+
+        .info_sec{
+            background: #ffffff ;
+            border-radius: 5px;
+            margin: 10px;
+           height: 400px;
+            padding: 15px;
+            width: 900px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .info_sec h2 {
+             color: #330c4f;
+             font-size: 25px;
+             font-family: "Monospace", Courier;
+
+        }
+        .info_sec p {
+             font-size: 15px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+
+        th {
+            background-color: #8f62ae;
+            color: white;
+            padding: 12px;
+            border: 1px solid #3f0c64;
+            height: 20px;
+            font-size: 15px;
+        }
+
+        td {
+            padding: 11px;
+            text-align: center;
+            border: 1px solid #ccc;
+            height: 10px;
+            font-size: 15px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f3eafa;
+        }
+
+        tbody tr:hover {
+            background-color: #e5d5f2;
+        }
+
+        .Hiatus {
+            color: #DC143C;
+            font-weight: bold;
+        }
+
+        .active {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        .disband{
+            color: #696969;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8f62ae;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+
+        footer p {
+            margin: 0;
+        }
+
+       ul { 
+            list-style-type: none;
+            margin: 20px 0 0 0;
+            padding: 0;
+            background-color: #6415a0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        } 
+
+        li a { 
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px ;
+            gap:18px;
+            text-decoration: none;
+            font-size: 15px;
+        } 
+
+        li a:hover { 
+            background-color: #3c105b; 
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>K-Pop Groups Profiles</h1>
+        <p>Webdesign And Programming</p>
+    
+        <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#groups">Groups</a></li>
+        <li><a href="#songs">Songs</a></li>
+        <li><a href="#status">Status</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+
+        <!-- Student Information Table -->
+        <section class="info_sec">
+
+            <h2>K-Pop Groups Profiles</h2>
+             <p>A list of favorite K-Pop groups, members, songs, generations, and their current status.</p>
+
+           <table>
+
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Favorite Group</th>
+                    <th>Favorite Member</th>
+                    <th>Favorite Song</th>
+                    <th>Generation</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>SEVENTEEN</td>
+                    <td>Minghao</td>
+                    <td>Hug</td>
+                    <td>3rd Gen</td>
+                    <td class="Hiatus">Hiatus</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>GIRLS GENERATION</td>
+                    <td>Yoona</td>
+                    <td>Mr. Taxi</td>
+                    <td>2nd Gen</td>
+                    <td class="active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>BLACKPINK</td>
+                    <td>Jennie</td>
+                    <td>As If It's Your Last</td>
+                    <td>3rd Gen</td>
+                    <td class="active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>CORTIS</td>
+                    <td>Keonho</td>
+                    <td>Acai</td>
+                    <td>5th Gen</td>
+                    <td class="active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>S.E.S</td>
+                    <td>Eugene</td>
+                    <td>I'm Your Girl</td>
+                    <td>1st Gen</td>
+                    <td class="disband">Disband</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>TREASURE</td>
+                    <td>Hyunsuk</td>
+                    <td>Yellow</td>
+                    <td>4th Gen</td>
+                    <td class="active">Active</td>
+                </tr>
+
+            </tbody>
+
+
+            </table>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Sheena Marie N. Propogo | 2-CS4</p>
+    </footer>
+
+</body>
+</html>

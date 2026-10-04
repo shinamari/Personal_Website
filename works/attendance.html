@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Attendance</title>
+</head>
+
+<body>
+
+    <h1>Class Attendance - JavaScript Array and Loop</h1>
+
+    <label>Enter Student Name:</label>
+    <input type="text" id="studentName" placeholder="Enter full name">
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <h2>Attendance List:</h2>
+
+    <ol id="attendanceList"></ol>
+
+    <script>
+
+        let students = [];
+
+        function addStudent() {
+
+            let name = document.getElementById("studentName").value;
+
+            if (name != "" && students.length < 10) {
+                students.push(name);
+
+                document.getElementById("studentName").value = "";
+
+                displayStudents();
+            }
+        }
+
+        function displayStudents() {
+
+            let list = document.getElementById("attendanceList");
+
+            list.innerHTML = "";
+
+            for (let i = 0; i < 10 && i < students.length; i++) {
+
+                let item = document.createElement("li");
+
+                item.textContent = students[i];
+
+                list.appendChild(item);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

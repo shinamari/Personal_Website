@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Character Counter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: #FFA07A;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid #FFA07A;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .counter {
+            text-align: right;
+            margin-top: 5px;
+            color: #FFA07A;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: #FFA07A;
+        }
+
+        #preview {
+            min-height: 50px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff8e8;
+            word-wrap: break-word;
+        }
+
+        /* TABLE CSS */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 25px;
+            overflow: hidden;
+            border: 2px solid #FFA07A;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        th {
+            background-color: #FFA07A;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #FFA07A;
+        }
+
+        td {
+            padding: 3px;
+            text-align: center;
+            font-size: 14px;
+            height: 25px;
+            background-color: #f5dfc5;
+            color: #3f2a1d;
+            font-weight: bold;
+            border-bottom: 1px solid #ffd1c2;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background-color: #ffe4d9;
+        }
+
+        /* LETTER CELL */
+        .letter-cell {
+            display: flex;
+            justify-content: center;
+            gap: 55px;
+            border-right: 1px solid #c98f55;
+        }
+
+        /* NUMBER CELL */
+        .number-cell {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Live Character Counter</h2>
+
+        <label>Enter your message:</label>
+
+        <textarea
+            id="message"
+            maxlength="150"
+            placeholder="Type your message here..."></textarea>
+
+        <div class="counter">
+            <span id="count">0</span> / 150
+        </div>
+
+        <h3>Live Preview</h3>
+
+        <div id="preview">
+            Your message will appear here...
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Letters</th>
+                    <th>Numbers</th>
+                </tr>
+            </thead>
+
+            <tbody id="result">
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+
+        const message = document.getElementById("message");
+        const count = document.getElementById("count");
+        const preview = document.getElementById("preview");
+        const result = document.getElementById("result");
+
+        message.addEventListener("input", function() {
+
+            let text = message.value;
+
+            // Count total characters
+            count.textContent = text.length;
+
+            // Live Preview
+            if (text.length === 0) {
+                preview.textContent =
+                    "Your message will appear here...";
+            } else {
+                preview.textContent = text;
+            }
+
+            // Objects for letters and numbers
+            let uppercase = {};
+            let lowercase = {};
+            let numbers = {};
+
+            // Set A-Z to 0
+            for (let i = 65; i <= 90; i++) {
+
+                let letter = String.fromCharCode(i);
+
+                uppercase[letter] = 0;
+            }
+
+            // Set a-z to 0
+            for (let i = 97; i <= 122; i++) {
+
+                let letter = String.fromCharCode(i);
+
+                lowercase[letter] = 0;
+            }
+
+            // Set 0-9 to 0
+            for (let i = 0; i <= 9; i++) {
+
+                numbers[i] = 0;
+            }
+
+            // Count each character
+            for (let i = 0; i < text.length; i++) {
+
+                let character = text[i];
+
+                // Uppercase
+                if (character >= "A" && character <= "Z") {
+
+                    uppercase[character]++;
+                }
+
+                // Lowercase
+                else if (character >= "a" && character <= "z") {
+
+                    lowercase[character]++;
+                }
+
+                // Numbers
+                else if (character >= "0" && character <= "9") {
+
+                    numbers[character]++;
+                }
+            }
+
+            // Clear previous table
+            result.innerHTML = "";
+
+            // Create 26 rows
+            for (let i = 0; i < 26; i++) {
+
+                let row = document.createElement("tr");
+
+                // Get letters
+                let upperLetter =
+                    String.fromCharCode(65 + i);
+
+                let lowerLetter =
+                    String.fromCharCode(97 + i);
+
+                // Create Letters cell
+                let letterCell =
+                    document.createElement("td");
+
+                letterCell.className = "letter-cell";
+
+                // Uppercase
+                let upperDiv =
+                    document.createElement("div");
+
+                upperDiv.textContent =
+                    upperLetter + " = " +
+                    uppercase[upperLetter];
+
+                // Lowercase
+                let lowerDiv =
+                    document.createElement("div");
+
+                lowerDiv.textContent =
+                    lowerLetter + " = " +
+                    lowercase[lowerLetter];
+
+                // Add uppercase and lowercase
+                letterCell.appendChild(upperDiv);
+                letterCell.appendChild(lowerDiv);
+
+                // Create Numbers cell
+                let numberCell =
+                    document.createElement("td");
+
+                numberCell.className = "number-cell";
+
+                if (i <= 9) {
+
+                    numberCell.textContent =
+                        i + " = " + numbers[i];
+
+                } else {
+
+                    numberCell.textContent = "";
+                }
+
+                // Add cells to row
+                row.appendChild(letterCell);
+                row.appendChild(numberCell);
+
+                // Add row to table
+                result.appendChild(row);
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+
