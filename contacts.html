@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheeScape | Contacts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Shee<span>Scape.</span></a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contacts.html" class="active">Contacts</a></li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+</header>
+
+<section class="page-container">
+
+    <div class="section-heading">
+        <p class="welcome">LET'S CONNECT</p>
+        <h1>Contact <span>Me</span></h1>
+        <p>Have a question or want to connect? Send me a message!</p>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                I'm always open to connecting, learning,
+                and exploring new opportunities.
+            </p>
+
+            <div class="contact-detail">
+                <span>📧</span>
+                <div>
+                    <h3>Email</h3>
+                    <p>snpropogo@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-detail">
+                <span>📍</span>
+                <div>
+                    <h3>Location</h3>
+                    <p>Bagong Kalsada Calamba Laguna</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+            <a href="https://facebook.com/" target="_blank">Facebook</a>
+            <a href="https://instagram.com/" target="_blank">Instagram</a>
+            </div>
+
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+    <h2>Send Me a Message</h2>
+
+    <input type="text"
+           id="name"
+           placeholder="Your Name"
+           required>
+
+    <input type="email"
+           id="email"
+           placeholder="Your Email"
+           required>
+
+    <input type="text"
+           id="subject"
+           placeholder="Subject"
+           required>
+
+    <textarea id="message"
+              placeholder="Write your message..."
+              rows="6"
+              required></textarea>
+
+    <button type="submit" class="btn primary-btn">
+        Send Message
+    </button>
+
+</form>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 SheeScape. Learning. Creating. Growing.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+

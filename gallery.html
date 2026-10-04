@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheeScape | Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Shee<span>Scape.</span></a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+</header>
+
+<section class="page-container">
+
+    <div class="section-heading">
+        <p class="welcome">MY MEMORIES</p>
+        <h1>My <span>Gallery</span></h1>
+        <p>A collection of moments, memories, and things I love.</p>
+    </div>
+
+   <div class="gallery-grid">
+
+    <div class="gallery-item">
+        <img src="1.jpg" alt="Gallery Image 1"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="2.jpg" alt="Gallery Image 2"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="3.jpg" alt="Gallery Image 3"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="4.jpg" alt="Gallery Image 4"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="5.jpg" alt="Gallery Image 5"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="6.jpg" alt="Gallery Image 6"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="7.jpg" alt="Gallery Image 7"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="8.jpg" alt="Gallery Image 8"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="9.jpg" alt="Gallery Image 9"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="10.jpg" alt="Gallery Image 10"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="11.jpg" alt="Gallery Image 11"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item">
+        <img src="12.jpg" alt="Gallery Image 12"
+             onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- VIDEOS -->
+
+    <div class="gallery-item">
+        <video controls>
+            <source src="vid1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="gallery-item">
+        <video controls>
+            <source src="vid2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="gallery-item">
+        <video controls>
+            <source src="vid3.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="gallery-item">
+        <video controls>
+            <source src="vid4.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
+</section>
+
+<!-- IMAGE PREVIEW -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Preview">
+</div>
+
+<footer>
+    <p>© 2026 SheeScape. Learning. Creating. Growing.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
